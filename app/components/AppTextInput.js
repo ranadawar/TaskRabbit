@@ -20,18 +20,19 @@ const AppTextInput = ({
   value,
   isPassword = false,
   showPassword,
+  inputStyle,
   ...otherProps
 }) => {
   return (
     <View style={styles.mainContainer}>
       <TextInput
         onChangeText={onChange}
-        style={styles.input}
+        style={[styles.input, inputStyle]}
         placeholder={placeholder}
         value={value}
         {...otherProps}
       />
-      {!isPassword && (
+      {icon && (
         <Pressable style={{ marginRight: 7 }} onPress={onPressIcon}>
           <MaterialCommunityIcons
             name={icon}

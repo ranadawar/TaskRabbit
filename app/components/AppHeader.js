@@ -14,6 +14,8 @@ const AppHeader = ({
   titleStyle,
   title = "Header",
   rightIconColor,
+  onPressLeft,
+  onPressRight,
 }) => {
   return (
     <View style={styles.mainContainer}>
@@ -21,6 +23,7 @@ const AppHeader = ({
         name={leftIcon}
         size={size}
         color={leftIconColor}
+        onPress={onPressLeft}
       />
       <Text
         adjustsFontSizeToFit
@@ -34,10 +37,13 @@ const AppHeader = ({
           name={rightIcon}
           color={rightIconColor}
           size={size}
+          onPress={onPressRight}
         />
       )}
       {rightText && (
-        <Text style={[styles.rightText, rightTextStyle]}>{rightText}</Text>
+        <Text onPress={onPressRight} style={[styles.rightText, rightTextStyle]}>
+          {rightText}
+        </Text>
       )}
     </View>
   );

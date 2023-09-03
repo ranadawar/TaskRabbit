@@ -1,6 +1,7 @@
 import {
   Image,
   KeyboardAvoidingView,
+  ScrollView,
   StyleSheet,
   Text,
   View,
@@ -20,59 +21,60 @@ const LoginScreen = ({ navigation }) => {
   return (
     <AppScreen>
       <View style={styles.mainContainer}>
-        <View style={{ flex: 1 }}>
-          <View style={styles.topContainer}>
-            <Image
-              style={styles.logo}
-              resizeMode="contain"
-              source={require("../../../assets/icons/login.png")}
-            />
-            <Text style={styles.title}>Login</Text>
-            <Text style={styles.subTitle}>Do away with to do</Text>
-          </View>
-          <KeyboardAvoidingView style={styles.formContainer}>
-            <AppTextInput
-              placeholder="Email"
-              value={email}
-              onChange={(text) => setEmail(text)}
-            />
-            <AppTextPasswordInput
-              placeholder="Password"
-              value={password}
-              onChange={(text) => setPassword(text)}
-            />
-
-            <View style={styles.horizontal}>
-              <Text style={styles.titleForgot}>Forgot your password?</Text>
-              <Text style={styles.subTitleForgot}>Reset it</Text>
-            </View>
-
-            <AppButton title="Login" />
-          </KeyboardAvoidingView>
-
-          <View style={styles.bottomContainer}>
-            <Text style={styles.did}>
-              Did you purchase an assembly from IKEA or sign up Via
-            </Text>
-            <View style={styles.socialBtnContainer}>
-              <SocialRegisterBtn
-                source={require("../../../assets/icons/facebook.png")}
-                onPress={() => console.log("facebook")}
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <View style={{ flex: 1 }}>
+            <View style={styles.topContainer}>
+              <Image
+                style={styles.logo}
+                resizeMode="contain"
+                source={require("../../../assets/icons/login.png")}
               />
-              <SocialRegisterBtn
-                source={require("../../../assets/icons/google.png")}
-                onPress={() => console.log("google")}
-              />
+              <Text style={styles.title}>Login</Text>
+              <Text style={styles.subTitle}>Do away with to do</Text>
             </View>
-            <Text
-              onPress={() => navigation.navigate("register")}
-              style={styles.lowestPassword}
-            >
-              Create Password
-            </Text>
-          </View>
-        </View>
+            <KeyboardAvoidingView style={styles.formContainer}>
+              <AppTextInput
+                placeholder="Email"
+                value={email}
+                onChange={(text) => setEmail(text)}
+              />
+              <AppTextPasswordInput
+                placeholder="Password"
+                value={password}
+                onChange={(text) => setPassword(text)}
+              />
 
+              <View style={styles.horizontal}>
+                <Text style={styles.titleForgot}>Forgot your password?</Text>
+                <Text style={styles.subTitleForgot}>Reset it</Text>
+              </View>
+
+              <AppButton title="Login" />
+            </KeyboardAvoidingView>
+
+            <View style={styles.bottomContainer}>
+              <Text style={styles.did}>
+                Did you purchase an assembly from IKEA or sign up Via
+              </Text>
+              <View style={styles.socialBtnContainer}>
+                <SocialRegisterBtn
+                  source={require("../../../assets/icons/facebook.png")}
+                  onPress={() => console.log("facebook")}
+                />
+                <SocialRegisterBtn
+                  source={require("../../../assets/icons/google.png")}
+                  onPress={() => console.log("google")}
+                />
+              </View>
+              <Text
+                onPress={() => navigation.navigate("register")}
+                style={styles.lowestPassword}
+              >
+                Create Password
+              </Text>
+            </View>
+          </View>
+        </ScrollView>
         <LinearGradient
           colors={["#DFFFEE", "#B0F5F1"]}
           style={styles.linearFull}
