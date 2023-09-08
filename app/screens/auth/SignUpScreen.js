@@ -45,15 +45,15 @@ const SignUpScreen = ({ navigation }) => {
   };
 
   return (
-    <AppScreen>
+    <AppScreen style={{ backgroundColor: COLORS.secondary }}>
+      <AppHeader
+        title="Taskrabbit"
+        titleStyle={styles.title}
+        rightText="Not Now"
+        onPressLeft={() => navigation.goBack()}
+        size={35}
+      />
       <View style={styles.mainContainer}>
-        <AppHeader
-          title="Taskrabbit"
-          titleStyle={styles.title}
-          rightText="Not Now"
-          onPressLeft={() => navigation.goBack()}
-        />
-
         <View style={styles.middleContainer}>
           <Text style={styles.signUp}>Sign Up</Text>
 
@@ -166,11 +166,9 @@ const styles = StyleSheet.create({
 
   middleContainerInner: {
     marginHorizontal: 15,
-    marginVertical: 10,
-    marginBottom: 50,
-    paddingVertical: 20,
-    padding: 12,
+    marginBottom: 30,
     height: Dimensions.get("window").height / 1.5,
+    paddingHorizontal: 30,
   },
   phoneContainer: {
     flexDirection: "row",

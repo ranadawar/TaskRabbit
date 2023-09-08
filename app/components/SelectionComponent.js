@@ -2,9 +2,9 @@ import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import React, { useState } from "react";
 
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { COLORS } from "../constants/theme";
+import { COLORS, FONTS } from "../constants/theme";
 
-const SelectionComponent = ({ source }) => {
+const SelectionComponent = ({ source, title = "Drywall" }) => {
   const [isSelected, setIsSelected] = useState(false);
 
   const toggleSelection = () => {
@@ -15,12 +15,14 @@ const SelectionComponent = ({ source }) => {
     <Pressable
       style={[
         styles.mainContainer,
-        { borderColor: isSelected ? COLORS.orange : COLORS.text },
+        { borderColor: isSelected ? "#333333" : "#E3E3E3" },
       ]}
       onPress={toggleSelection}
     >
-      <Image source={source} resizeMode="contain" style={styles.image} />
-      <Text style={styles.title}>SelectionComponent</Text>
+      <View style={styles.rowInner}>
+        <Image source={source} resizeMode="contain" style={styles.image} />
+        <Text style={styles.title}>{title}</Text>
+      </View>
       {isSelected ? (
         <MaterialCommunityIcons
           name="check-circle"
@@ -52,6 +54,16 @@ const styles = StyleSheet.create({
   image: {
     width: 30,
     height: 30,
+    marginRight: 30,
+  },
+  rowInner: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  title: {
+    color: "#333333",
+    fontFamily: FONTS.medium,
+    fontSize: 18,
   },
 });
 

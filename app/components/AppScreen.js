@@ -9,11 +9,7 @@ import {
 import React from "react";
 
 const AppScreen = ({ children, style }) => {
-  return (
-    <SafeAreaView style={[styles.mainContainer, style]}>
-      {children}
-    </SafeAreaView>
-  );
+  return <View style={[styles.mainContainer, style]}>{children}</View>;
 };
 
 export default AppScreen;
@@ -21,6 +17,6 @@ export default AppScreen;
 const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
-    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 40,
   },
 });

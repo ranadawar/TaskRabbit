@@ -22,10 +22,10 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   title: {
-    fontFamily: FONTS.medium,
-    fontSize: 14,
+    fontFamily: FONTS.semiBold,
+    fontSize: 12,
     color: COLORS.text,
-    marginTop: 7,
+    marginTop: 10,
   },
   image: {
     width: 150,

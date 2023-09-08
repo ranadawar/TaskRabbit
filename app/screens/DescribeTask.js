@@ -8,11 +8,11 @@ import SelectionComponent from "../components/SelectionComponent";
 
 const DescribeTask = ({ navigation }) => {
   return (
-    <AppScreen>
+    <AppScreen style={{ paddingTop: 60 }}>
       <HalfHeader
         title="Describe Your Task"
-        rightIcon="chevron-right-circle"
-        rightIconColor={COLORS.danger}
+        rightIcon="chevron-right"
+        rightIconColor={COLORS.bg}
         onPressRight={() => navigation.navigate("mount")}
       />
       <Separator />
@@ -29,16 +29,14 @@ const DescribeTask = ({ navigation }) => {
             source={require("../../assets/icons/drywall.png")}
           />
           <SelectionComponent
-            source={require("../../assets/icons/drywall.png")}
+            source={require("../../assets/icons/concrete.png")}
           />
           <SelectionComponent
-            source={require("../../assets/icons/drywall.png")}
+            source={require("../../assets/icons/brick.png")}
           />
+          <SelectionComponent source={require("../../assets/icons/wood.png")} />
           <SelectionComponent
-            source={require("../../assets/icons/drywall.png")}
-          />
-          <SelectionComponent
-            source={require("../../assets/icons/drywall.png")}
+            source={require("../../assets/icons/other.png")}
           />
         </View>
       </View>
@@ -58,6 +56,7 @@ const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
     marginHorizontal: 20,
+    paddingTop: 20,
   },
   optionContainer: {},
 });

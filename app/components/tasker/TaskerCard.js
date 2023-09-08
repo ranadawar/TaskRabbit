@@ -71,6 +71,7 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.lightBg,
     padding: 20,
     marginTop: 20,
+    borderRadius: 10,
   },
   innerContainer: {
     flexDirection: "row",

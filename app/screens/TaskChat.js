@@ -10,6 +10,7 @@ import {
 } from "react-native";
 import { AntDesign, MaterialIcons, Ionicons } from "@expo/vector-icons"; // Import the required icons
 import { COLORS } from "../constants/theme";
+import { LinearGradient } from "expo-linear-gradient";
 
 const dummyMessages = [
   { id: 1, text: "Hello!", isMe: false, time: "10:00 am" },
@@ -47,35 +48,39 @@ const TaskChat = () => {
   };
 
   const renderItem = ({ item }) => (
-    <View
-      style={[
-        styles.messageContainer,
-        { alignSelf: item.isMe ? "flex-end" : "flex-start" },
-      ]}
-    >
-      {!item.isMe && (
-        <Image
-          source={require("../../assets/images/profile.png")}
-          style={styles.profilePhoto}
-        />
-      )}
+    <>
       <View
         style={[
-          styles.messageBubble,
-          { backgroundColor: item.isMe ? COLORS.danger : COLORS.white },
+          styles.messageContainer,
+          { alignSelf: item.isMe ? "flex-end" : "flex-start" },
         ]}
       >
-        <Text
+        {!item.isMe && (
+          <Image
+            source={require("../../assets/images/profile.png")}
+            style={styles.profilePhoto}
+          />
+        )}
+        <View
           style={[
-            styles.messageText,
-            { color: item.isMe ? COLORS.white : COLORS.text },
+            styles.messageBubble,
+            { backgroundColor: item.isMe ? COLORS.danger : COLORS.white },
           ]}
         >
-          {item.text}
-        </Text>
-        <Text style={styles.messageTime}>{item.time}</Text>
+          <Text
+            style={[
+              styles.messageText,
+              { color: item.isMe ? COLORS.white : COLORS.text },
+            ]}
+          >
+            {item.text}
+          </Text>
+        </View>
       </View>
-    </View>
+      <Text style={item.isMe ? styles.messageTimeMe : styles.messageTime}>
+        {item.time}
+      </Text>
+    </>
   );
 
   return (
@@ -91,37 +96,61 @@ const TaskChat = () => {
       <View style={styles.inputContainer}>
         <View style={styles.iconContainer}>
           <TouchableOpacity>
-            <AntDesign
-              name="phone"
-              size={24}
-              color={COLORS.white}
-              style={{ marginHorizontal: 12 }}
+            <Image
+              source={require("../../assets/icons/call.png")}
+              style={styles.icon}
+              resizeMode="contain"
             />
           </TouchableOpacity>
           <TouchableOpacity>
-            <MaterialIcons
-              name="photo-camera"
-              size={24}
+            <AntDesign
+              name="camera"
+              size={25}
               color={COLORS.white}
-              style={{ marginHorizontal: 12 }}
+              style={{ marginLeft: 15 }}
             />
           </TouchableOpacity>
         </View>
-        <TextInput
-          style={styles.textInput}
-          placeholder="Type your message..."
-          value={inputMessage}
-          onChangeText={setInputMessage}
-        />
-        <TouchableOpacity onPress={handleSendMessage}>
-          <Ionicons name="send" size={24} color={COLORS.white} />
-        </TouchableOpacity>
+        <View style={styles.row}>
+          <TextInput
+            style={styles.textInput}
+            placeholder="Type your message..."
+            value={inputMessage}
+            onChangeText={setInputMessage}
+          />
+          <TouchableOpacity onPress={handleSendMessage}>
+            <Image
+              source={require("../../assets/icons/attach.png")}
+              style={styles.icon}
+              resizeMode="contain"
+            />
+          </TouchableOpacity>
+          <TouchableOpacity onPress={handleSendMessage}>
+            <Image
+              source={require("../../assets/icons/send.png")}
+              style={styles.icon}
+              resizeMode="contain"
+            />
+          </TouchableOpacity>
+        </View>
       </View>
+      <LinearGradient
+        style={styles.absolute}
+        colors={["#DFFFEE", COLORS.primaryGreen]}
+      />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
+  absolute: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    bottom: 0,
+    right: 0,
+    zIndex: -1,
+  },
   container: {
     flex: 1,
     backgroundColor: COLORS.background,
@@ -153,17 +182,28 @@ const styles = StyleSheet.create({
     color: COLORS.text,
     marginTop: 4,
     fontSize: 12,
+    marginBottom: 10,
+  },
+  messageTimeMe: {
+    color: COLORS.text,
+    marginTop: 4,
+    fontSize: 12,
+    textAlign: "right",
+    marginBottom: 15,
   },
   iconContainer: {
     flexDirection: "row",
     marginRight: 8,
+    alignItems: "center",
   },
   inputContainer: {
     flexDirection: "row",
     alignItems: "center",
+    justifyContent: "space-between",
     borderTopWidth: 1,
     borderColor: COLORS.border,
     padding: 8,
+    paddingHorizontal: 15,
     backgroundColor: COLORS.black,
   },
   textInput: {
@@ -171,10 +211,23 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     paddingVertical: 8,
     borderRadius: 20,
-    borderWidth: 1,
-    borderColor: COLORS.border,
     marginRight: 8,
     backgroundColor: COLORS.white,
+  },
+
+  row: {
+    flexDirection: "row",
+    alignItems: "center",
+    maxWidth: "73%",
+    backgroundColor: COLORS.white,
+    padding: 5,
+    borderRadius: 25,
+  },
+  icon: {
+    width: 20,
+    height: 20,
+    resizeMode: "contain",
+    marginHorizontal: 5,
   },
 });
 

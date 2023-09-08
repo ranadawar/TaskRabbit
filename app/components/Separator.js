@@ -12,6 +12,5 @@ const styles = StyleSheet.create({
   mainContainer: {
     height: 1,
     backgroundColor: COLORS.gray,
-    marginHorizontal: 40,
   },
 });

@@ -22,7 +22,7 @@ const TaskInfo = () => {
         <TaskerInfo />
 
         <View style={styles.topContainer}>
-          <RowItem />
+          <RowItem image={require("../../assets/icons/date.png")} />
           <Separator />
           <RowItem
             leftText="Price Details"
@@ -58,10 +58,10 @@ const TaskInfo = () => {
 
         <View style={styles.btn}>
           <Text style={styles.details}>Your Task Details</Text>
-          <MaterialCommunityIcons
-            name="chevron-right"
-            color={COLORS.danger}
-            size={30}
+          <Image
+            source={require("../../assets/icons/chevCircle.png")}
+            resizeMode="contain"
+            style={{ width: 28, height: 28 }}
           />
         </View>
 
@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
   btns: {
     justifyContent: "center",
     alignItems: "center",
-    marginVertical: 30,
+    marginVertical: 25,
   },
   details: {
     fontSize: 16,
@@ -115,6 +115,7 @@ const styles = StyleSheet.create({
     marginBottom: 30,
   },
   imagee: {
-    width: Dimensions.get("window").width - 25,
+    width: Dimensions.get("window").width - 2,
+    height: 150,
   },
 });

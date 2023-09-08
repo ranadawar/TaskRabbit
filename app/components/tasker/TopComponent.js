@@ -2,7 +2,7 @@ import { Dimensions, Image, StyleSheet, Text, View } from "react-native";
 import React from "react";
 
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { COLORS, FONTS } from "../../constants/theme";
+import { COLORS, FONTS, SHADOWS } from "../../constants/theme";
 import { LinearGradient } from "expo-linear-gradient";
 import FilterBtn from "./FilterBtn";
 
@@ -58,7 +58,9 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     paddingVertical: 10,
+    marginTop: 10,
     borderRadius: 10,
+    ...SHADOWS.dark,
   },
   filteredTExt: {
     fontFamily: FONTS.regular,

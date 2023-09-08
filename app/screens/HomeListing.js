@@ -108,7 +108,7 @@ const trending = [
 
 const HomeListing = () => {
   return (
-    <AppScreen>
+    <AppScreen style={{ backgroundColor: COLORS.secondary }}>
       <View style={styles.mainContainer}>
         <ScrollView showsVerticalScrollIndicator={false}>
           <View style={styles.topContainer}>
@@ -171,7 +171,7 @@ const HomeListing = () => {
 
           <View style={styles.bottomContainer}>
             <Text style={styles.popularText}>Trending</Text>
-            <View>
+            <View style={{ marginHorizontal: 5 }}>
               <FlatList
                 data={trending}
                 keyExtractor={(item) => item.id.toString()}
@@ -200,6 +200,7 @@ const styles = StyleSheet.create({
   },
   categoriesContainer: {
     marginVertical: 7,
+    marginHorizontal: 10,
   },
   help: {
     color: COLORS.white,
@@ -221,6 +222,7 @@ const styles = StyleSheet.create({
   },
   mainContainer: {
     flex: 1,
+    backgroundColor: COLORS.white,
   },
   popularContainer: {
     marginHorizontal: 20,
@@ -229,7 +231,7 @@ const styles = StyleSheet.create({
   popularText: {
     fontFamily: FONTS.semiBold,
     fontSize: 20,
-    marginHorizontal: 20,
+    marginHorizontal: 17,
     marginTop: 15,
     marginBottom: 8,
   },

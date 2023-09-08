@@ -25,7 +25,9 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     borderWidth: 1,
     borderColor: COLORS.gray,
-    height: 60,
+
+    height: 70,
+
     marginBottom: 10,
     justifyContent: "center",
     alignItems: "center",
@@ -37,7 +39,6 @@ const styles = StyleSheet.create({
   mainContainer: {
     width: 98,
     paddingHorizontal: 10,
-    marginRight: 5,
   },
   title: {
     fontSize: 13,

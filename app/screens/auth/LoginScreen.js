@@ -19,7 +19,7 @@ const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   return (
-    <AppScreen>
+    <AppScreen style={{ backgroundColor: "#DFFFEE" }}>
       <View style={styles.mainContainer}>
         <ScrollView showsVerticalScrollIndicator={false}>
           <View style={{ flex: 1 }}>

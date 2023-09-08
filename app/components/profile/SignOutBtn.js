@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet, Text, View } from "react-native";
+import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import React from "react";
 
 import { MaterialCommunityIcons } from "@expo/vector-icons";
@@ -7,6 +7,11 @@ import { FONTS } from "../../constants/theme";
 const SignOutBtn = ({ fontSize, onPress, style, title = "Sign Out" }) => {
   return (
     <Pressable style={[styles.mainContainer, style]} onPress={onPress}>
+      <Image
+        resizeMode="contain"
+        source={require("../../../assets/icons/filtera.png")}
+        style={{ width: 14, height: 14, marginRight: 10 }}
+      />
       <Text
         numberOfLines={1}
         adjustToFontSize
@@ -14,7 +19,6 @@ const SignOutBtn = ({ fontSize, onPress, style, title = "Sign Out" }) => {
       >
         {title}
       </Text>
-      <MaterialCommunityIcons name="chevron-right" color="#333333" size={25} />
     </Pressable>
   );
 };

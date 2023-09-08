@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Dimensions, StyleSheet, Text, View } from "react-native";
 import React from "react";
 
 import { MaterialCommunityIcons } from "@expo/vector-icons";
@@ -57,11 +57,17 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     padding: 12,
+    paddingVertical: 25,
+    backgroundColor: COLORS.secondary,
   },
   title: {
     fontSize: 20,
     fontFamily: FONTS.bold,
     color: COLORS.white,
+
+    position: "absolute",
+    //center of the View both horizontal and vertically
+    left: 140,
   },
   rightText: {
     fontSize: 16,

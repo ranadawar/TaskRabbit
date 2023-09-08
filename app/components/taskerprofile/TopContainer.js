@@ -63,6 +63,7 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     backgroundColor: COLORS.lightBg,
     borderRadius: "50%",
+    marginTop: -15,
   },
   linearGra: {
     flexDirection: "row",

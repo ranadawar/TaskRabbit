@@ -16,20 +16,27 @@ import { BottomTabBar } from "@react-navigation/bottom-tabs";
 import OptionsBtn from "../components/profile/OptionsBtn";
 import SignOutBtn from "../components/profile/SignOutBtn";
 
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+
 const Profile = () => {
   const [email, setEmail] = React.useState("dawar@Gmail.com");
   return (
-    <AppScreen>
-      <View style={{ flex: 1 }}>
+    <AppScreen style={{ backgroundColor: COLORS.white, paddingTop: 60 }}>
+      <View style={styles.topHeadContainer}>
+        <MaterialCommunityIcons
+          name="chevron-left"
+          size={33}
+          color={COLORS.text}
+        />
+        <Text style={styles.mainTitle}>Profile</Text>
+        <MaterialCommunityIcons
+          name="dots-vertical"
+          size={33}
+          color={COLORS.text}
+        />
+      </View>
+      <View style={{ flex: 1, backgroundColor: COLORS.white }}>
         <ScrollView showVerticalScrollIndicator={false}>
-          <AppHeader
-            leftIcon="chevron-left"
-            leftIconColor={COLORS.text}
-            titleStyle={{ color: COLORS.text }}
-            title="Profile"
-            size={33}
-            rightIcon="dots-vertical"
-          />
           <View style={styles.topContainer}>
             <View style={styles.whiteAbsolute} />
 
@@ -123,6 +130,7 @@ const styles = StyleSheet.create({
     width: Dimensions.get("window").width,
     height: 100,
     marginTop: -50,
+    backgroundColor: COLORS.black,
   },
   email: {
     fontFamily: FONTS.regular,
@@ -163,7 +171,7 @@ const styles = StyleSheet.create({
     borderBottomEndRadius: 40,
     borderBottomStartRadius: 40,
     zIndex: 1,
-    height: 320,
+    height: 300,
   },
   whiteAbsolute: {
     position: "absolute",
@@ -182,5 +190,27 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     marginHorizontal: 20,
     marginTop: 20,
+  },
+
+  row3: {
+    flexDirection: "row",
+    alignItems: "center",
+    padding: 20,
+  },
+  task: {
+    color: COLORS.text,
+    fontFamily: FONTS.medium,
+    fontSize: 16,
+  },
+  mainTitle: {
+    fontFamily: FONTS.semiBold,
+    fontSize: 20,
+  },
+  topHeadContainer: {
+    padding: 20,
+    justifyContent: "space-between",
+    flexDirection: "row",
+    alignItems: "center",
+    paddingBottom: 0,
   },
 });

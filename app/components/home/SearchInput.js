@@ -22,7 +22,8 @@ const SearchInput = ({
   isPassword = false,
   showPassword,
   inputStyle,
-  iconColor = COLORS.text,
+  iconColor = "#979797",
+  placeholderTextColor = "#333333",
   ...otherProps
 }) => {
   return (
@@ -37,6 +38,7 @@ const SearchInput = ({
         style={[styles.input, inputStyle]}
         placeholder={placeholder}
         value={value}
+        placeholderTextColor={placeholderTextColor}
         {...otherProps}
       />
     </View>

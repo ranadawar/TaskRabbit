@@ -11,11 +11,11 @@ const TvMounting = ({ navigation }) => {
   const [streetAddress, setStreetAddress] = React.useState("");
   const [apartment, setApartment] = React.useState("");
   return (
-    <AppScreen>
+    <AppScreen style={{ backgroundColor: COLORS.white, paddingTop: 60 }}>
       <HalfHeader
         title="Describe Your Task"
-        rightIcon="chevron-right-circle"
-        rightIconColor={COLORS.danger}
+        rightIcon="chevron-right"
+        rightIconColor={COLORS.bg}
         onPressRight={() => navigation.navigate("mount")}
         onPressLeft={() => navigation.goBack()}
       />

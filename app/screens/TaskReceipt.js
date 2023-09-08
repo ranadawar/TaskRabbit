@@ -12,7 +12,7 @@ const TaskReceipt = () => {
       <ScrollView showsVerticalScrollIndicator={false}>
         <TaskerInfo />
 
-        <View style={styles.topContainer}>
+        <View style={styles.topContainer1}>
           <RowItem />
           <Separator />
           <RowItem
@@ -77,9 +77,19 @@ const styles = StyleSheet.create({
   },
   topContainer: {
     marginHorizontal: 20,
+    paddingTop: 5,
+    borderTopRightRadius: 20,
+    borderTopLeftRadius: 20,
+    marginBottom: 30,
+    backgroundColor: COLORS.white,
+    overflow: "hidden",
+    borderRadius: 20,
+  },
+  topContainer1: {
+    marginHorizontal: 20,
     padding: 5,
     borderRadius: 20,
-    backgroundColor: COLORS.white,
     marginBottom: 30,
+    backgroundColor: COLORS.white,
   },
 });

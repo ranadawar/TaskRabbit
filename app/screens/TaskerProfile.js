@@ -9,6 +9,7 @@ import ExperienceSection from "../components/taskerprofile/ExperienceSection";
 import PhotosSection from "../components/taskerprofile/PhotosSection";
 import RatingBar from "../components/taskerprofile/RatingBar";
 import RatingContainer from "../components/taskerprofile/RatingContainer";
+import { COLORS } from "../constants/theme";
 
 const images = [
   {
@@ -38,7 +39,7 @@ const images = [
 ];
 const TaskerProfile = ({ navigation }) => {
   return (
-    <AppScreen>
+    <AppScreen style={{ paddingTop: 60, backgroundColor: COLORS.white }}>
       <View style={styles.mainContainer}>
         <ScrollView showsVerticalScrollIndicator={false}>
           <Header onPressBack={() => navigation.goBack()} />
@@ -64,6 +65,7 @@ export default TaskerProfile;
 const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
+    backgroundColor: COLORS.white,
   },
   servicesComponent: {
     marginTop: -30,

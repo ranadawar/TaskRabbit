@@ -4,6 +4,7 @@ import AppScreen from "../components/AppScreen";
 import TopComponent from "../components/tasker/TopComponent";
 import ProfileCard from "../components/profile/ProfileCard";
 import TaskerCard from "../components/tasker/TaskerCard";
+import { COLORS } from "../constants/theme";
 
 const taskers = [
   {
@@ -26,8 +27,8 @@ const taskers = [
 
 const SelectTasker = ({ navigation }) => {
   return (
-    <AppScreen>
-      <View style={{ FLEX: 1 }}>
+    <AppScreen style={{ backgroundColor: "#DFFFEE", paddingTop: 60 }}>
+      <View style={{ flex: 1, backgroundColor: COLORS.white }}>
         <ScrollView>
           <TopComponent onPressBack={() => navigation.goBack()} />
           {taskers.map((tasker) => (
