@@ -60,26 +60,30 @@ const styles = StyleSheet.create({
     alignItems: "center",
     width: 145,
     height: 145,
+    borderRadius: 72.5,
     alignSelf: "center",
     backgroundColor: COLORS.lightBg,
-    borderRadius: "50%",
+
     marginTop: -15,
   },
   linearGra: {
     flexDirection: "row",
     alignItems: "center",
-    padding: 25,
+    paddingVertical: 18,
     marginVertical: 30,
-    marginHorizontal: 25,
+    marginHorizontal: 20,
     borderRadius: 30,
     justifyContent: "space-between",
-    paddingHorizontal: Dimensions.get("window").width / 18,
+    paddingHorizontal: Dimensions.get("window").width / 40,
   },
   mainContainer: {
     paddingVertical: 25,
   },
   mainContainerC: {
-    maxWidth: "33.33%",
+    //I want to it to have 1/3 space of the parent container
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
   },
   name: {
     fontFamily: FONTS.medium,

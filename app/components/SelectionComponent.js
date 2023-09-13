@@ -33,7 +33,7 @@ const SelectionComponent = ({ source, title = "Drywall" }) => {
         <MaterialCommunityIcons
           name="circle-outline"
           size={33}
-          color={COLORS.danger}
+          color={COLORS.gray}
         />
       )}
     </Pressable>

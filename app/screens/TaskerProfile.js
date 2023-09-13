@@ -1,4 +1,4 @@
-import { ScrollView, StyleSheet, Text, View } from "react-native";
+import { Dimensions, ScrollView, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import AppScreen from "../components/AppScreen";
 import Header from "../components/taskerprofile/Header";
@@ -9,7 +9,8 @@ import ExperienceSection from "../components/taskerprofile/ExperienceSection";
 import PhotosSection from "../components/taskerprofile/PhotosSection";
 import RatingBar from "../components/taskerprofile/RatingBar";
 import RatingContainer from "../components/taskerprofile/RatingContainer";
-import { COLORS } from "../constants/theme";
+import { COLORS, FONTS } from "../constants/theme";
+import AppButton from "../components/AppButton";
 
 const images = [
   {
@@ -38,6 +39,7 @@ const images = [
   },
 ];
 const TaskerProfile = ({ navigation }) => {
+  const [rate, setRate] = React.useState("45");
   return (
     <AppScreen style={{ paddingTop: 60, backgroundColor: COLORS.white }}>
       <View style={styles.mainContainer}>
@@ -51,9 +53,18 @@ const TaskerProfile = ({ navigation }) => {
           </View>
 
           <ExperienceSection />
-          <PhotosSection images={images} />
+          <View style={{ marginHorizontal: 20 }}>
+            <PhotosSection images={images} />
 
-          <RatingContainer />
+            <RatingContainer />
+
+            <Separator />
+
+            <View style={styles.leastBottom}>
+              <Text style={styles.titleRate}>${rate}/hr</Text>
+              <AppButton style={styles.btnAtBottom} title="Select" />
+            </View>
+          </View>
         </ScrollView>
       </View>
     </AppScreen>
@@ -63,6 +74,11 @@ const TaskerProfile = ({ navigation }) => {
 export default TaskerProfile;
 
 const styles = StyleSheet.create({
+  btnAtBottom: {
+    width: Dimensions.get("window").width / 1.73,
+    padding: 13,
+    borderRadius: 30,
+  },
   mainContainer: {
     flex: 1,
     backgroundColor: COLORS.white,
@@ -70,5 +86,16 @@ const styles = StyleSheet.create({
   servicesComponent: {
     marginTop: -30,
     marginHorizontal: 20,
+  },
+  titleRate: {
+    fontFamily: FONTS.semiBold,
+    fontSize: 20,
+  },
+  leastBottom: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    marginTop: -10,
+    paddingVertical: 30,
   },
 });

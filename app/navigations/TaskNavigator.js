@@ -22,6 +22,9 @@ const TaskNavigator = () => {
         },
         tabBarIndicatorStyle: {
           backgroundColor: COLORS.danger,
+          width: "23%",
+          marginLeft: 20,
+          marginRight: 20,
         },
       }}
     >

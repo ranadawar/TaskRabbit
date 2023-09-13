@@ -40,8 +40,7 @@ const styles = StyleSheet.create({
     overflow: "hidden",
   },
   mainContainer: {
-    padding: 20,
-    marginHorizontal: 20,
+    paddingVertical: 20,
     marginVertical: 10,
   },
   photos: {

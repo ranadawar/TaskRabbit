@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 
 import { MaterialCommunityIcons } from "@expo/vector-icons";
@@ -13,6 +13,9 @@ const HalfHeader = ({
   onPressRight,
   rightText,
   rightTextStyle,
+  iconColor,
+  rightImage,
+  onPressRightImage,
 }) => {
   return (
     <View style={styles.mainContainer}>
@@ -30,6 +33,15 @@ const HalfHeader = ({
           size={26}
           onPress={onPressRight}
         />
+      )}
+      {rightImage && (
+        <TouchableOpacity onPress={onPressRightImage}>
+          <Image
+            source={rightImage}
+            resizeMode="contain"
+            style={styles.rightImageStyle}
+          />
+        </TouchableOpacity>
       )}
       {rightText && (
         <Text
@@ -49,6 +61,10 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     padding: 15,
+  },
+  rightImageStyle: {
+    width: 15,
+    height: 15,
   },
   title: {
     fontSize: 20,

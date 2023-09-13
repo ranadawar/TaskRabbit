@@ -37,7 +37,7 @@ const AppTextInput = ({
           <MaterialCommunityIcons
             name={icon}
             size={size}
-            color={COLORS.primaryGreen}
+            color={COLORS.secondary}
           />
         </Pressable>
       )}

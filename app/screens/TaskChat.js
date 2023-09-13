@@ -156,7 +156,8 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.background,
   },
   chatContainer: {
-    padding: 16,
+    paddingHorizontal: 30,
+    paddingVertical: 12,
   },
   messageContainer: {
     flexDirection: "row",
@@ -203,8 +204,11 @@ const styles = StyleSheet.create({
     borderTopWidth: 1,
     borderColor: COLORS.border,
     padding: 8,
-    paddingHorizontal: 15,
+    paddingHorizontal: 20,
     backgroundColor: COLORS.black,
+    paddingVertical: 20,
+    borderTopLeftRadius: 30,
+    borderTopRightRadius: 30,
   },
   textInput: {
     flex: 1,

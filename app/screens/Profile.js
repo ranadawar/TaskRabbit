@@ -29,10 +29,10 @@ const Profile = () => {
           color={COLORS.text}
         />
         <Text style={styles.mainTitle}>Profile</Text>
-        <MaterialCommunityIcons
-          name="dots-vertical"
-          size={33}
-          color={COLORS.text}
+        <Image
+          style={styles.chev}
+          resizeMode="contain"
+          source={require("../../assets/icons/verDot.png")}
         />
       </View>
       <View style={{ flex: 1, backgroundColor: COLORS.white }}>
@@ -93,14 +93,16 @@ const Profile = () => {
             />
           </View>
 
-          <View style={{ justifyContent: "center", alignItems: "center" }}>
-            <Image
-              resizeMode="contain"
-              source={require("../../assets/images/truster.png")}
-              style={styles.imageTruster}
-            />
+          <View style={{ backgroundColor: "#E9F9F6" }}>
+            <View style={{ justifyContent: "center", alignItems: "center" }}>
+              <Image
+                resizeMode="contain"
+                source={require("../../assets/images/truster.png")}
+                style={styles.imageTruster}
+              />
+            </View>
+            <SignOutBtn />
           </View>
-          <SignOutBtn />
         </ScrollView>
       </View>
     </AppScreen>
@@ -128,9 +130,16 @@ const styles = StyleSheet.create({
   },
   bgImage: {
     width: Dimensions.get("window").width,
-    height: 100,
+    height: 110,
     marginTop: -50,
     backgroundColor: COLORS.black,
+    borderBottomEndRadius: 35,
+    borderBottomStartRadius: 35,
+    overflow: "hidden",
+  },
+  chev: {
+    width: 18,
+    height: 18,
   },
   email: {
     fontFamily: FONTS.regular,
@@ -161,7 +170,7 @@ const styles = StyleSheet.create({
     zIndex: 1,
   },
   optionsContainer: {
-    marginHorizontal: 20,
+    paddingHorizontal: 20,
     backgroundColor: "#E9F9F6",
     paddingVertical: 15,
   },
@@ -189,7 +198,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     marginHorizontal: 20,
-    marginTop: 20,
+    marginTop: 25,
   },
 
   row3: {

@@ -39,7 +39,7 @@ const AppTextPasswordInput = ({
           <MaterialCommunityIcons
             name="eye-off"
             size={size}
-            color={COLORS.primaryGreen}
+            color={COLORS.secondary}
           />
         </Pressable>
       ) : (

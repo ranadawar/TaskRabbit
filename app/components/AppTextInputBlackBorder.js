@@ -1,4 +1,5 @@
 import {
+  Image,
   Pressable,
   StyleSheet,
   Text,
@@ -21,6 +22,8 @@ const AppTextInputBlackBorder = ({
   isPassword = false,
   showPassword,
   inputStyle,
+  imageRight,
+  onPressRightImage = () => {},
   ...otherProps
 }) => {
   return (
@@ -41,6 +44,15 @@ const AppTextInputBlackBorder = ({
           />
         </Pressable>
       )}
+      {imageRight && (
+        <TouchableOpacity onPress={onPressRightImage}>
+          <Image
+            resizeMode="contain"
+            source={require("../../assets/icons/crossSecond.png")}
+            style={styles.imageRight}
+          />
+        </TouchableOpacity>
+      )}
     </View>
   );
 };
@@ -48,6 +60,10 @@ const AppTextInputBlackBorder = ({
 export default AppTextInputBlackBorder;
 
 const styles = StyleSheet.create({
+  imageRight: {
+    width: 13,
+    height: 13,
+  },
   input: {
     flex: 1,
     padding: 10,

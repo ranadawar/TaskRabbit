@@ -24,7 +24,7 @@ const Task = () => {
         <Image
           resizeMode="contain"
           source={require("../../assets/icons/gift.png")}
-          style={{ width: 25, height: 25 }}
+          style={{ width: 25, height: 25, marginRight: 5 }}
         />
       </View>
       <TaskNavigator />
@@ -49,6 +49,7 @@ const styles = StyleSheet.create({
     marginTop: 15,
     justifyContent: "space-between",
     paddingVertical: 20,
+    paddingHorizontal: 20,
   },
   row: {
     flexDirection: "row",

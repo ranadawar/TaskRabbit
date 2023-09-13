@@ -22,7 +22,7 @@ export default ExperienceSection;
 
 const styles = StyleSheet.create({
   mainContainer: {
-    padding: 30,
+    padding: 20,
     backgroundColor: COLORS.lightBg,
   },
   readMore: {

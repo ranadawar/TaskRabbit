@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     height: 130,
   },
   mainContainer: {
-    padding: 12,
+    marginRight: 18,
   },
   title: {
     width: 120,

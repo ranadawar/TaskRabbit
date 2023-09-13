@@ -14,10 +14,10 @@ const TvMounting = ({ navigation }) => {
     <AppScreen style={{ backgroundColor: COLORS.white, paddingTop: 60 }}>
       <HalfHeader
         title="Describe Your Task"
-        rightIcon="chevron-right"
         rightIconColor={COLORS.bg}
         onPressRight={() => navigation.navigate("mount")}
         onPressLeft={() => navigation.goBack()}
+        rightImage={require("../../assets/icons/cross.png")}
       />
       <Separator />
       <View style={styles.imageContainer}>
@@ -29,7 +29,11 @@ const TvMounting = ({ navigation }) => {
       </View>
 
       <View style={styles.inputs}>
-        <AppTextInputBlackBorder placeholder="Street Address" icon={false} />
+        <AppTextInputBlackBorder
+          placeholder="Street Address"
+          icon={false}
+          imageRight={true}
+        />
         <AppTextInputBlackBorder placeholder="Street Address" icon={false} />
         <AppButton
           title="Continue"

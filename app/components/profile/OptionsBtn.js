@@ -18,7 +18,11 @@ const OptionsBtn = ({
         <Text style={styles.title}>{title}</Text>
       </View>
 
-      <MaterialCommunityIcons name="chevron-right" size={24} color="#333333" />
+      <Image
+        source={require("../../../assets/icons/chevronp.png")}
+        resizeMode="contain"
+        style={styles.chev}
+      />
     </Pressable>
   );
 };
@@ -26,6 +30,10 @@ const OptionsBtn = ({
 export default OptionsBtn;
 
 const styles = StyleSheet.create({
+  chev: {
+    width: 12,
+    height: 12,
+  },
   image: {
     width: 25,
     height: 25,
@@ -43,6 +51,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     padding: 12,
+    alignItems: "center",
   },
   title: {
     marginLeft: 15,

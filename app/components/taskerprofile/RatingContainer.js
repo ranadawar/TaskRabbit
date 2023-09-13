@@ -47,22 +47,20 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    marginHorizontal: 20,
     marginVertical: 20,
   },
   innerRow: {
     flexDirection: "row",
     alignItems: "center",
-    marginHorizontal: 20,
   },
   percentage: {
     fontSize: 16,
     fontFamily: FONTS.regular,
   },
   ratingContainer: {
-    padding: 10,
+    paddingVertical: 10,
     backgroundColor: COLORS.white,
-    paddingBottom: 50,
+    paddingBottom: 10,
   },
   reviewText: {
     fontFamily: FONTS.medium,
@@ -82,6 +80,5 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    marginHorizontal: 20,
   },
 });

@@ -25,12 +25,12 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     borderWidth: 1,
     borderColor: COLORS.gray,
-
     height: 70,
-
+    width: 70,
     marginBottom: 10,
     justifyContent: "center",
     alignItems: "center",
+    marginRight: 10,
   },
   image: {
     width: 38,
@@ -38,11 +38,11 @@ const styles = StyleSheet.create({
   },
   mainContainer: {
     width: 98,
-    paddingHorizontal: 10,
+    justifyContent: "center",
+    alignItems: "center",
   },
   title: {
     fontSize: 13,
     color: COLORS.text,
-    textAlign: "center",
   },
 });

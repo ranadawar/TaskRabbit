@@ -7,12 +7,14 @@ import SignUpScreen from "../screens/auth/SignUpScreen";
 import DescribeTask from "../screens/DescribeTask";
 import TvMounting from "../screens/TvMounting";
 import AppNavigator from "./AppNavigator";
+import WelcomeScreen from "../screens/auth/WelcomeScreen";
 
 const Stack = createNativeStackNavigator();
 
 const AuthNavigator = () => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="welcome" component={WelcomeScreen} />
       <Stack.Screen name="login" component={LoginScreen} />
       <Stack.Screen name="register" component={SignUpScreen} />
       <Stack.Screen name="describe" component={DescribeTask} />
