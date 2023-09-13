@@ -16,6 +16,7 @@ const AppTextPasswordInput = ({
   size = 24,
   onChange,
   value,
+  iconColorTextInput = COLORS.secondary,
   ...otherProps
 }) => {
   const [secureTextEntry, setSecureTextEntry] = React.useState(true);
@@ -31,6 +32,7 @@ const AppTextPasswordInput = ({
         style={styles.input}
         placeholder={placeholder}
         value={value}
+        placeholderTextColor="#333333"
         secureTextEntry={secureTextEntry}
         {...otherProps}
       />
@@ -39,7 +41,7 @@ const AppTextPasswordInput = ({
           <MaterialCommunityIcons
             name="eye-off"
             size={size}
-            color={COLORS.secondary}
+            color={iconColorTextInput}
           />
         </Pressable>
       ) : (

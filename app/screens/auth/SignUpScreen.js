@@ -17,7 +17,7 @@ const SignUpScreen = ({ navigation }) => {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [phoneNumber, setPhoneNumber] = React.useState("");
-  const [countryCode, setCountryCode] = useState("");
+  const [countryCode, setCountryCode] = useState("7777");
   const [postelCode, setPostelCode] = useState("");
 
   const onChangeFirstName = (text) => {
@@ -109,12 +109,49 @@ const SignUpScreen = ({ navigation }) => {
               icon="map-marker-check"
             />
 
+            <Text
+              style={{
+                fontFamily: FONTS.regular,
+                fontSize: 12,
+                color: COLORS.white,
+              }}
+            >
+              Your phone and zip code help us match and connect you with the
+              right taskers.
+            </Text>
+
             <AppButton
               title="Sign Up"
               style={{ backgroundColor: COLORS.black }}
               onPress={() => navigation.navigate("describe")}
             />
           </View>
+
+          <Text style={styles.regular}>
+            By Signing up, you agree to our
+            <Text style={styles.semibold}> Terms & Services</Text>, and{" "}
+            <Text style={styles.semibold}>Privacy Policy</Text>
+          </Text>
+
+          <Text
+            style={{
+              color: COLORS.white,
+              fontFamily: FONTS.regular,
+              fontSize: 12,
+              textAlign: "center",
+            }}
+          >
+            Already have an account?
+            <Text
+              style={{
+                fontFamily: FONTS.semiBold,
+                fontSize: 12,
+              }}
+            >
+              {" "}
+              Login
+            </Text>
+          </Text>
 
           <View style={styles.absoluteInner}>
             <LinearGradient
@@ -187,5 +224,22 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 24,
+  },
+
+  regular: {
+    fontFamily: FONTS.regular,
+    fontSize: 16,
+    color: COLORS.white,
+
+    position: "absolute",
+    bottom: 90,
+    textAlign: "center",
+    marginHorizontal: 50,
+  },
+  semibold: {
+    fontFamily: FONTS.semiBold,
+    fontSize: 16,
+    color: COLORS.white,
+    marginHorizontal: 7,
   },
 });

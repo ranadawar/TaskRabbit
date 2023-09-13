@@ -10,6 +10,8 @@ import React, { useState } from "react";
 import { CountryPicker } from "react-native-country-codes-picker";
 import { COLORS } from "../constants/theme";
 
+import MaterialCommunityIcons from "@expo/vector-icons";
+
 const CountryCode = ({ countryCode, setCountryCode = () => {} }) => {
   const [show, setShow] = useState(false);
 
@@ -18,7 +20,7 @@ const CountryCode = ({ countryCode, setCountryCode = () => {} }) => {
       <TouchableOpacity onPress={() => setShow(true)} style={styles.touchable}>
         <Text
           style={{
-            color: COLORS.gray,
+            color: "#333333",
             fontSize: 20,
           }}
         >
@@ -51,5 +53,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderRadius: 7,
     minWidth: 100,
+    flexDirection: "row",
+    alignSelf: "center",
   },
 });

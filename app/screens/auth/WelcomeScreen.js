@@ -46,7 +46,7 @@ const colors = [
   },
 ];
 
-const WelcomeScreen = () => {
+const WelcomeScreen = ({ navigation }) => {
   const onSkip = () => {};
   return (
     <AppScreen style={{ backgroundColor: "#FF6153" }}>
@@ -104,7 +104,10 @@ const WelcomeScreen = () => {
           </View>
         </View>
 
-        <TouchableOpacity style={styles.btnSkip}>
+        <TouchableOpacity
+          onPress={() => navigation.navigate("login")}
+          style={styles.btnSkip}
+        >
           <Text style={styles.gotItText}>Got it</Text>
           <MaterialCommunityIcons
             name="chevron-right"

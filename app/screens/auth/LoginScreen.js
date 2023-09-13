@@ -37,11 +37,13 @@ const LoginScreen = ({ navigation }) => {
                 placeholder="Email"
                 value={email}
                 onChange={(text) => setEmail(text)}
+                iconColorTextInput={COLORS.primaryGreen}
               />
               <AppTextPasswordInput
                 placeholder="Password"
                 value={password}
                 onChange={(text) => setPassword(text)}
+                iconColorTextInput={COLORS.primaryGreen}
               />
 
               <View style={styles.horizontal}>

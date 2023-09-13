@@ -21,6 +21,7 @@ const AppTextInput = ({
   isPassword = false,
   showPassword,
   inputStyle,
+  iconColorTextInput = COLORS.secondary,
   ...otherProps
 }) => {
   return (
@@ -29,6 +30,7 @@ const AppTextInput = ({
         onChangeText={onChange}
         style={[styles.input, inputStyle]}
         placeholder={placeholder}
+        placeholderTextColor="#333333"
         value={value}
         {...otherProps}
       />
@@ -37,7 +39,7 @@ const AppTextInput = ({
           <MaterialCommunityIcons
             name={icon}
             size={size}
-            color={COLORS.secondary}
+            color={iconColorTextInput}
           />
         </Pressable>
       )}
