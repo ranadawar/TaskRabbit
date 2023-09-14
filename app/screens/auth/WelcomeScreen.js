@@ -87,8 +87,8 @@ const WelcomeScreen = ({ navigation }) => {
               paginationStyle={{
                 //i want it on the left side instead of the bottom
                 position: "absolute",
-                bottom: -50,
-                left: 0,
+                bottom: -55,
+                left: 20,
               }}
               data={colors}
               renderItem={({ item }) => (
@@ -151,7 +151,7 @@ const styles = StyleSheet.create({
     borderRadius: 80,
     position: "absolute",
     bottom: 65,
-    right: 20,
+    right: 30,
   },
   gotItText: {
     fontFamily: FONTS.medium,
@@ -187,6 +187,7 @@ const styles = StyleSheet.create({
     textAlign: "right",
     color: COLORS.white,
     padding: 25,
+    marginRight: 10,
   },
   semiBold: {
     fontFamily: FONTS.semiBold,

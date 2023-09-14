@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, View } from "react-native";
 import React from "react";
 
 import { MaterialCommunityIcons } from "@expo/vector-icons";
@@ -16,7 +16,11 @@ const TopBar = ({ location = "Denvor" }) => {
         <Text style={styles.location}>{location}</Text>
       </View>
       <View>
-        <MaterialCommunityIcons name="magnify" color={COLORS.white} size={28} />
+        <Image
+          resizeMode="contain"
+          style={{ width: 20, height: 20, marginRight: 5 }}
+          source={require("../../../assets/icons/homeS.png")}
+        />
       </View>
     </View>
   );

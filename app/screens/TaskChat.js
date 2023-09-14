@@ -103,11 +103,15 @@ const TaskChat = () => {
             />
           </TouchableOpacity>
           <TouchableOpacity>
-            <AntDesign
-              name="camera"
-              size={25}
-              color={COLORS.white}
-              style={{ marginLeft: 15 }}
+            <Image
+              resizeMode="contain"
+              source={require("../../assets/icons/camra.png")}
+              style={{
+                width: 24,
+                height: 24,
+                marginLeft: 15,
+                marginBottom: 3,
+              }}
             />
           </TouchableOpacity>
         </View>
@@ -206,7 +210,7 @@ const styles = StyleSheet.create({
     padding: 8,
     paddingHorizontal: 20,
     backgroundColor: COLORS.black,
-    paddingVertical: 20,
+    paddingVertical: 15,
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
   },

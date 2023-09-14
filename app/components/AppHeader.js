@@ -1,4 +1,4 @@
-import { Dimensions, StyleSheet, Text, View } from "react-native";
+import { Dimensions, Image, StyleSheet, Text, View } from "react-native";
 import React from "react";
 
 import { MaterialCommunityIcons } from "@expo/vector-icons";
@@ -19,11 +19,10 @@ const AppHeader = ({
 }) => {
   return (
     <View style={styles.mainContainer}>
-      <MaterialCommunityIcons
-        name={leftIcon}
-        size={size}
-        color={leftIconColor}
-        onPress={onPressLeft}
+      <Image
+        resizeMode="contain"
+        style={{ width: 18, height: 18 }}
+        source={require("../../assets/icons/chevSign.png")}
       />
       <Text
         adjustsFontSizeToFit
@@ -56,7 +55,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    padding: 12,
+    padding: 20,
     paddingVertical: 25,
     backgroundColor: COLORS.secondary,
   },

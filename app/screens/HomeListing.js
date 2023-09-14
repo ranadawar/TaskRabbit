@@ -350,6 +350,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "flex-start",
     borderWidth: 1,
+    borderColor: "#EEEEEE",
     padding: 15,
     borderRadius: 20,
     overflow: "hidden",

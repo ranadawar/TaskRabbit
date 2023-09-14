@@ -1,6 +1,6 @@
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import React from "react";
-import { FONTS } from "../../constants/theme";
+import { COLORS, FONTS, SHADOWS } from "../../constants/theme";
 
 const TrendingBtn = ({ image, onPress, title }) => {
   return (
@@ -25,6 +25,10 @@ const styles = StyleSheet.create({
   },
   mainContainer: {
     marginRight: 18,
+    backgroundColor: COLORS.white,
+    padding: 10,
+    borderRadius: 10,
+    ...SHADOWS.dark,
   },
   title: {
     width: 120,

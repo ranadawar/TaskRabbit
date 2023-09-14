@@ -70,13 +70,13 @@ const AppNavigator = () => {
               <MaterialCommunityIcons
                 name="heart"
                 color={COLORS.secondary}
-                size={size}
+                size={size + 5}
               />
             ) : (
-              <MaterialCommunityIcons
-                name="heart-outline"
-                color={COLORS.primaryGreen}
-                size={size}
+              <Image
+                style={{ width: size, height: size }}
+                source={require("../../assets/icons/heartInActive.png")}
+                resizeMode="contain"
               />
             ),
           tabBarActiveTintColor: COLORS.secondary,

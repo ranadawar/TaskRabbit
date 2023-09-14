@@ -15,13 +15,13 @@ const DescribeTask = ({ navigation }) => {
         rightIconColor={COLORS.bg}
         onPressRight={() => navigation.navigate("mount")}
       />
-      <Separator />
+      <Separator isHalf={true} />
       <View style={styles.mainContainer}>
         <View style={styles.imageContainer}>
           <Image
             style={styles.image}
             source={require("../../assets/images/dtask.png")}
-            resizeMode="contain"
+            resizeMode="cover"
           />
         </View>
         <View style={styles.optionContainer}>
@@ -46,7 +46,7 @@ const DescribeTask = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   image: {
-    width: Dimensions.get("window").width - 10,
+    width: Dimensions.get("window").width + 20,
     height: 300,
   },
   imageContainer: {

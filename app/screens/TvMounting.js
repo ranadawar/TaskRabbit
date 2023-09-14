@@ -18,13 +18,15 @@ const TvMounting = ({ navigation }) => {
         onPressRight={() => navigation.navigate("mount")}
         onPressLeft={() => navigation.goBack()}
         rightImage={require("../../assets/icons/cross.png")}
+        style={{ paddingHorizontal: 25 }}
+        rightImageStyle={{ marginRight: 20 }}
       />
-      <Separator />
+      <Separator style={{ marginHorizontal: 15 }} />
       <View style={styles.imageContainer}>
         <Image
           style={styles.image}
           source={require("../../assets/images/dtask.png")}
-          resizeMode="contain"
+          resizeMode="cover"
         />
       </View>
 
@@ -48,8 +50,9 @@ export default TvMounting;
 
 const styles = StyleSheet.create({
   image: {
-    width: Dimensions.get("window").width - 10,
+    width: Dimensions.get("window").width,
     height: 300,
+    marginTop: 20,
   },
   imageContainer: {
     justifyContent: "center",

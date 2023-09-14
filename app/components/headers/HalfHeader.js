@@ -13,12 +13,14 @@ const HalfHeader = ({
   onPressRight,
   rightText,
   rightTextStyle,
+  style,
   iconColor,
   rightImage,
   onPressRightImage,
+  rightImageStyle,
 }) => {
   return (
-    <View style={styles.mainContainer}>
+    <View style={[styles.mainContainer, style]}>
       <MaterialCommunityIcons
         name="chevron-left"
         color={COLORS.text}
@@ -35,7 +37,7 @@ const HalfHeader = ({
         />
       )}
       {rightImage && (
-        <TouchableOpacity onPress={onPressRightImage}>
+        <TouchableOpacity style={rightImageStyle} onPress={onPressRightImage}>
           <Image
             source={rightImage}
             resizeMode="contain"
