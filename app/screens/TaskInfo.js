@@ -34,18 +34,21 @@ const TaskInfo = () => {
             isDollar={true}
             rightText="45"
             isPerHour={true}
+            image={true}
           />
           <RowItem
             leftText="Trust & Support Fees"
             isDollar={true}
             rightText="15"
             isPerHour={true}
+            image={true}
           />
           <RowItem
             leftText="Total Rate"
             isDollar={true}
             rightText="61.57"
             isPerHour={true}
+            image={true}
           />
           <Separator />
           <RowItem

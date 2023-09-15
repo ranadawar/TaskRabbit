@@ -21,11 +21,10 @@ const HalfHeader = ({
 }) => {
   return (
     <View style={[styles.mainContainer, style]}>
-      <MaterialCommunityIcons
-        name="chevron-left"
-        color={COLORS.text}
-        size={26}
-        onPress={onPressLeft}
+      <Image
+        source={require("../../../assets/icons/describe.png")}
+        resizeMode="contain"
+        style={{ width: 20, height: 20 }}
       />
       <Text style={styles.title}>{title}</Text>
       {rightIcon && (
